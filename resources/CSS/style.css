@@ -1,3 +1,11 @@
+/*Estilos universales*/
+
+:root {
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --accent: #ff6b6b;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,4 +13,116 @@
 }
 
 html,
-body {}
+body {
+    font-family: "Arial", sans-serif;
+    letter-spacing: 1px;
+}
+
+/*Barra de navegación e inicio*/
+
+header {
+    background-image: url(../images/Bolapadelgrande.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: gradientAnimation 5s ease infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Ubuntu Condensed", sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+nav a {
+    color: #ffda79;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding-inline: 1.25rem;
+}
+
+footer {
+    background-color: #736002;
+    color: #f2e529;
+    text-align: center;
+    padding-inline: 0.625rem;
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 0.625rem;
+    }
+}
