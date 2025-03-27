@@ -16,9 +16,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
+    <!--Link iconos redes sociales-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <body>
     <!--Barra de navegación-->
-    <header>
+    <header id="index">
         <nav>
             <ul>
                 <li><a href="#index">Inicio</a></li>
@@ -30,28 +36,97 @@
         </nav>
         <h1 class="gradient-text">Padel Team</h1>
     </header>
-    <section id="about">
-        <h2>Sobre Nosotros</h2>
-        <p>Somos el mejor club de pádel de la ciudad, con instalaciones modernas y entrenadores expertos.</p>
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>Sobre Nosotros</h2>
+            <p>En <strong>Padel Team</strong>, vivimos la pasión por el pádel. Contamos con instalaciones modernas,
+                pistas de alta calidad y un ambiente ideal tanto para jugadores aficionados como profesionales.</p>
+            <p>Anotate a partidos de tu nivel en nuestra web o en la app de <strong>Playtomic</strong> y disfruta.</p>
+        </div>
+        <div class="images-container">
+            <figure class="image-container">
+                <img src="./resources/images/pista1.jpg" alt="bandeja" />
+            </figure>
+            <figure class="image-container">
+                <img src="./resources/images/pista2.jpg" alt="partido de padel" />
+            </figure>
+            <figure class="image-container">
+                <img src="./resources/images/pista3.jpg" alt="pista de padel" />
+            </figure>
+            <figure class="image-container extra">
+                <img src="./resources/images/pista4.jpg" alt="jugador en pista" />
+            </figure>
+        </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="services-content">
         <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Clases para principiantes y avanzados</li>
-            <li>Alquiler de pistas</li>
-            <li>Eventos y torneos</li>
-        </ul>
+        <div class="dropdowns">
+            <details class="dropdown">
+                <summary>Alquiler de Pistas</summary>
+                <div>
+                    <p>27€/1,5h - Alta demanda (L-V 17:00-23:30)</p>
+                    <p>12€/1,5h - Baja demanda (L-V 11:00-17:00)</p>
+                    <p>16€/1,5h - Baja demanda (Fines y festivos)</p>
+                    <p>20€/1,5h - Alta demanda (Fines y festivos)</p>
+                </div>
+            </details>
+
+            <details class="dropdown">
+                <summary>Cursos</summary>
+                <div>
+                    <p>25€/mes - Infantil (6-8 alumnos)</p>
+                    <p>40,50€/mes - Adulto (4-6 alumnos)</p>
+                    <p>25€/h - Entrenamiento personal (Baja demanda, máx 4 alumnos)</p>
+                    <p>30€/h - Entrenamiento personal (Alta demanda, máx 4 alumnos)</p>
+                </div>
+            </details>
+
+            <details class="dropdown">
+                <summary>Alquiler de Palas</summary>
+                <div>
+                    <p>1€ por alquiler</p>
+                </div>
+            </details>
+        </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2>Contacto</h2>
-        <p>Email: contacto@clubpadel.com</p>
-        <p>Teléfono: +34 123 456 789</p>
+        <div class="contact-content">
+            <div class="adress">
+                <p>Padel Team Club</p>
+                <p>Avenida del Deporte, 42</p>
+                <p>Barrio San Rafael</p>
+                <p>28015 Madrid, España</p>
+            </div>
+            <div class="phone">
+                <p>Email: contacto@clubpadel.com</p>
+                <p>Teléfono: +34 123 456 789</p>
+            </div>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://x.com" target="_blank" style="--color: #1da1f2"><i
+                            class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" style="--color: #1877f2"><i
+                            class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" style="--color: #f56040"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.whatsapp.com" target="_blank" style="--color: #25D366"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Club de Pádel - Todos los derechos reservados</p>
+        <p>Copyright &copy; 2025 Club de Pádel - Todos los derechos reservados</p>
     </footer>
 
 </body>

@@ -18,6 +18,10 @@ body {
     letter-spacing: 1px;
 }
 
+section {
+    margin: 8rem 0;
+}
+
 /*Barra de navegación e inicio*/
 
 header {
@@ -59,6 +63,13 @@ header {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .gradient-text {
+        text-align: center;
+        font-size: 5rem;
+    }
+}
+
 nav {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -71,6 +82,8 @@ nav {
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    z-index: 1;
 }
 
 nav ul {
@@ -109,15 +122,223 @@ nav a:hover {
     color: #fff;
 }
 
-section {
-    padding-inline: 1.25rem;
+/*Sección Sobre nosotros*/
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    font-size: 1.5rem;
 }
+
+.about-content {
+    max-width: 800px;
+    margin-bottom: 1.25rem;
+}
+
+.about-content p {
+    padding: 1rem;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    .images-container img {
+        max-width: 250px;
+    }
+
+    .about-section {
+        font-size: 1rem;
+    }
+}
+
+/*Sección tarifas*/
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.services-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.dropdowns {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.dropdown {
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown summary {
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none;
+    background: #ccc;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown summary::before {
+    content: "⮟ ";
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown:hover summary::before {
+    opacity: 1; 
+}
+
+.dropdown[open] summary::before {
+    content: "⮝ "; 
+}
+
+.dropdown div {
+    padding: 0.625rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .services-content {
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+    }
+
+    .dropdowns {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dropdown {
+        width: 40rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .services-content h2 {
+        margin-bottom: 3rem;
+    }
+}
+
+/*Sección de contacto*/
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: black;
+    margin-bottom: 0;
+    height: 15rem;
+    color: #ccc;
+    align-content: space-evenly;
+}
+
+.contact-section h2 {
+    padding: 2rem;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.contact-content div {
+    align-content: center;
+}
+
+.social-icons {
+    margin-top: 1.25px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    margin: 0.625rem;
+    border-radius: 50%;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1.25rem;
+    color: var(--color);
+}
+
+.social-icons a:hover {
+    background: var(--color);
+    color: #010101;
+    box-shadow: 0 0 0.3125px var(--color), 0 0 1.5625px var(--color), 0 0 3.125px var(--color), 0 0 4.6875px var(--color);
+}
+
+@media only screen and (max-width: 850px) {
+    .contact-content {
+        width: 90%;
+        gap: 2rem;
+    }
+
+    .contact-section {
+        height: auto;
+        font-size: 1rem;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+}
+
+/*Pie de página*/
 
 footer {
     background-color: #736002;
     color: #f2e529;
     text-align: center;
-    padding-inline: 0.625rem;
+    padding: 0.7rem;
+    font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 600px) {
