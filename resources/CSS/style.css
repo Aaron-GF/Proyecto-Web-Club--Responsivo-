@@ -1,4 +1,4 @@
-/*Estilos universales*/
+/*Universal styles*/
 
 :root {
     --primary: #6a11cb;
@@ -22,7 +22,7 @@ section {
     margin: 8rem 0;
 }
 
-/*Barra de navegación e inicio*/
+/*Navigation bar and home*/
 
 header {
     background-image: url(../images/Bolapadelgrande.jpg);
@@ -32,7 +32,7 @@ header {
     justify-content: center;
     align-items: center;
     display: flex;
-    min-height: 100vh;
+    height: 43.5rem;
 }
 
 .gradient-text {
@@ -63,14 +63,106 @@ header {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     .gradient-text {
         text-align: center;
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+
+    header {
+        height: 30rem;
+    }
+
+    .big-screen {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    .menu li {
+        padding: 10px 25px;
+        cursor: pointer;
+        position: relative;
+        margin: 0;
+        color: #ff6b6b;
+    }
+
+    .menu li a {
+        display: block;
+    }
+
+    .submenu {
+        position: absolute;
+        display: none;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 1rem;
+        border-radius: 10px;
+        left: -20px;
+        width: 180px;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
+    }
+
+    .menu li:hover > .submenu {
+        display: block;
+    }
+
+    .submenu li {
+        position: relative;
+    }
+
+    .mobile {
+        display: block;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 2rem;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+        font-size: 1rem;
     }
 }
 
-nav {
+@media only screen and (max-width: 480px) {
+    header {
+        height: 20rem;
+    }
+
+    .gradient-text {
+        font-size: 3rem;
+    }
+
+    .mobile ul {
+        gap: 2rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .big-screen {
+        font-size: 1.2rem;
+    }
+
+    .big-screen ul {
+        gap: 2rem;
+    }
+}
+
+.big-screen {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     padding: 1rem;
@@ -82,7 +174,7 @@ nav {
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     z-index: 1;
 }
 
@@ -94,7 +186,7 @@ nav ul {
 }
 
 nav a {
-    color: #ffda79;
+    color: #ff6b6b;
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -122,7 +214,7 @@ nav a:hover {
     color: #fff;
 }
 
-/*Sección Sobre nosotros*/
+/*About us section*/
 
 .about-section {
     display: flex;
@@ -131,6 +223,7 @@ nav a:hover {
     text-align: center;
     padding: 0;
     font-size: 1.5rem;
+    line-height: 2;
 }
 
 .about-content {
@@ -168,7 +261,9 @@ nav a:hover {
     }
 }
 
-/*Sección tarifas*/
+/*Pricing section*/
+
+/*Pricing section - Services content*/
 
 .services-content {
     display: flex;
@@ -176,6 +271,7 @@ nav a:hover {
     align-items: center;
     font-size: 1rem;
     justify-content: center;
+    line-height: 2;
 }
 
 .services-content h2 {
@@ -209,6 +305,8 @@ nav a:hover {
     position: relative;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .dropdown summary::before {
@@ -220,11 +318,11 @@ nav a:hover {
 }
 
 .dropdown:hover summary::before {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .dropdown[open] summary::before {
-    content: "⮝ "; 
+    content: "⮝ ";
 }
 
 .dropdown div {
@@ -257,18 +355,19 @@ nav a:hover {
     }
 }
 
-/*Sección de contacto*/
+/*Contact section*/
 
 .contact-section {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 1.2rem;
-    background-color: black;
+    background-color: #0D0D0D;
     margin-bottom: 0;
     height: 15rem;
-    color: #ccc;
+    color: #F0F2F2;
     align-content: space-evenly;
+    line-height: 1.5;
 }
 
 .contact-section h2 {
@@ -287,7 +386,7 @@ nav a:hover {
 }
 
 .social-icons {
-    margin-top: 1.25px;
+    margin-top: 1.25rem;
     list-style: none;
     padding: 0;
     display: flex;
@@ -313,8 +412,8 @@ nav a:hover {
 
 .social-icons a:hover {
     background: var(--color);
-    color: #010101;
-    box-shadow: 0 0 0.3125px var(--color), 0 0 1.5625px var(--color), 0 0 3.125px var(--color), 0 0 4.6875px var(--color);
+    color: #0D0D0D;
+    box-shadow: 0 0 0.3125rem var(--color), 0 0 1.5625rem var(--color), 0 0 3.125rem var(--color), 0 0 4.6875rem var(--color);
 }
 
 @media only screen and (max-width: 850px) {
@@ -331,11 +430,11 @@ nav a:hover {
     }
 }
 
-/*Pie de página*/
+/*Footer*/
 
 footer {
-    background-color: #736002;
-    color: #f2e529;
+    background-color: #0AA65D;
+    color: #F0F2F2;
     text-align: center;
     padding: 0.7rem;
     font-size: 0.8rem;
