@@ -107,7 +107,7 @@ header {
         margin-top: 10px;
     }
 
-    .menu li:hover > .submenu {
+    .menu li:hover>.submenu {
         display: block;
     }
 
@@ -149,6 +149,7 @@ header {
 @media only screen and (min-width: 800px) {
     .mobile {
         display: none;
+        width: 60%;
     }
 }
 
@@ -272,6 +273,7 @@ nav a:hover {
     font-size: 1rem;
     justify-content: center;
     line-height: 2;
+   
 }
 
 .services-content h2 {
@@ -329,11 +331,12 @@ nav a:hover {
     padding: 0.625rem 1rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 950px) {
     .services-content {
         flex-direction: row;
         justify-content: space-evenly;
         font-size: 1.5rem;
+        padding: 0 2rem;
     }
 
     .dropdowns {
