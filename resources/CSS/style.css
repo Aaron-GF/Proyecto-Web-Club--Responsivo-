@@ -107,6 +107,10 @@ header {
         margin-top: 10px;
     }
 
+    #menu-toggle {
+        cursor: pointer;
+    }
+
     .menu li:hover>.submenu {
         display: block;
     }
