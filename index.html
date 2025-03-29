@@ -147,31 +147,36 @@
         document.addEventListener("DOMContentLoaded", function () {
             var menuToggle = document.getElementById("menu-toggle");
             var submenu = document.querySelector(".submenu");
-    
-            // Alternar el menú al hacer clic en el icono
-            menuToggle.addEventListener("click", function () {
+
+            function toggleMenu(event) {
+                event.stopPropagation(); // Evita que el evento se propague
                 if (submenu.style.display === "block") {
                     submenu.style.display = "none";
                 } else {
                     submenu.style.display = "block";
                 }
-            });
-    
-            // Cerrar el menú cuando se haga clic en un enlace
+            }
+
+            function closeMenu(event) {
+                if (!submenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    submenu.style.display = "none";
+                }
+            }
+
+            // Usamos solo "click" para evitar el doble disparo en iPhone
+            menuToggle.addEventListener("click", toggleMenu);
+
+            // Cerrar el menú al hacer clic en un enlace
             document.querySelectorAll(".submenu a").forEach(link => {
                 link.addEventListener("click", function () {
                     submenu.style.display = "none";
                 });
             });
-    
-            // Cerrar el menú si se hace clic fuera de él
-            document.addEventListener("click", function (event) {
-                if (!menuToggle.contains(event.target) && !submenu.contains(event.target)) {
-                    submenu.style.display = "none";
-                }
-            });
+
+            // Cerrar el menú si se toca fuera de él
+            document.addEventListener("click", closeMenu);
         });
     </script>
-    </body>
+</body>
 
 </html>
