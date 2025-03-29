@@ -148,7 +148,15 @@
             var submenu = document.querySelector(".submenu");
             submenu.classList.toggle("active");
         });
+    
+        // Cerrar el menú cuando se haga clic en un enlace
+        document.querySelectorAll(".submenu a").forEach(link => {
+            link.addEventListener("click", function () {
+                var submenu = document.querySelector(".submenu");
+                submenu.classList.remove("active");
+            });
+        });
     </script>
-    </body>
+        </body>
 
 </html>
